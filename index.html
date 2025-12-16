@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>GST BILL</h2>
+
+<input id="price" placeholder="Item Price">
+<input id="qty" placeholder="Quantity">
+<input id="gst" placeholder="GST %">
+
+<button onclick="bill()">Generate Bill</button>
+
+<p id="result"></p>
+
+<script>
+function bill() {
+  let p = price.value;
+  let q = qty.value;
+  let g = gst.value;
+  let total = p * q;
+  let gstAmt = total * g / 100;
+  result.innerHTML =
+    "Total: ₹" + total +
+    "<br>GST: ₹" + gstAmt +
+    "<br><b>Final: ₹" + (total + gstAmt) + "</b>";
+}
+</script>
+
+</body>
+</html>
